@@ -14,12 +14,12 @@ function* logout(){
     try{
        
         yield call(services.logout)
-        console.log("logout saga")
+
         yield put(actions.userLoggedOut())
         
         yield put(alerts.setAlertAction({
             type:MessageBarType.success,
-            text:"User Loggedout"
+            text:"User Logged Out"
         }))
 
         history.push("/")
@@ -42,7 +42,7 @@ function* login({creds}:any){
         
         yield put(alerts.setAlertAction({
             type:MessageBarType.success,
-            text:"User Loggedin"
+            text:"User Logged In"
         }))
 
         history.push("/")
